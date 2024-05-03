@@ -4,8 +4,10 @@ data "aws_availability_zones" "available" {
 
 resource "aws_vpc" "vpc" {
   cidr_block           = var.vpcCIDR
-  tags                 = var.tag
   enable_dns_hostnames = true
+  tags = {
+    "Name" = var.name
+  }
 }
 
 resource "aws_subnet" "public_subnet" {
