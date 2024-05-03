@@ -1,3 +1,8 @@
+## This module will create:
+- _AutoScaling Group_
+- _Launch Template_
+- _Security Group_
+
 ## Usage
 
 module "autoscaling" {  

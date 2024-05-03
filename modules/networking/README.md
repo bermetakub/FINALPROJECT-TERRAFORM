@@ -1,3 +1,8 @@
+## This module will create:
+- _VPC_
+- _Public Subnets_
+- _Private Subnets_
+
 ## Usage
 
 module "networking" {  
