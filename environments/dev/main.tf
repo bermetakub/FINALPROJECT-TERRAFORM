@@ -29,16 +29,6 @@ module "autoscaling" {
   ingress_ports       = [22, 80, 443]
 }
 
-# module "alb" {
-#     source = "terraform-aws-modules/alb/aws"
-#     name = "my-ALB"
-#     vpc_id  = module.networking.vpc_id
-#     subnets = module.networking.public_subnets
-#     security_groups = module.autoscaling.security_group
-
-# }
-
-# 
 module "alb" {
   source = "cloudposse/alb/aws"
 

@@ -1,6 +1,25 @@
+## Usage
+
+module "autoscaling" {  
+  source              = "../../modules/autoscaling"  
+  ami                 = data.aws_ami.Ubuntu.id  
+  instance_type       = "t2.micro"  
+  desired_size        = 2  
+  max_size            = 3  
+  min_size            = 1  
+  vpc_zone_Identifier = values(module.networking.private_subnets)  
+  target_group        = [module.alb.default_target_group_arn]  
+  vpcid               = module.networking.vpc_id  
+  ingress_ports       = [22, 80, 443]  
+}
+
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.0 |
+
 
 ## Providers
 
