@@ -5,11 +5,19 @@
 
 ## Usage
 
+```terraform
 module "networking" {  
   source        = "../../modules/networking"  
   public_cidrs  = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]  
   private_cidrs = ["10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24"]  
 }
+```
+
+Then perform the following commands on the root folder:
+- `terraform init` terraform initialization
+- `terraform plan` to see the infrastructure plan
+- `terraform apply` to apply infrastructure build
+- `terraform destroy` to destroy the infrastructure
 
 ## Requirements
 
@@ -17,16 +25,6 @@ module "networking" {
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.0 |
-
-## Providers
-
-| Name | Version |
-|------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
-
-## Modules
-
-No modules.
 
 ## Resources
 
